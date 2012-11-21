@@ -1,0 +1,61 @@
+/*
+This file is for pages from todo controller
+*/
+@import "main.less";
+
+#page {
+	h1 {
+		font-size: 40px;
+		margin-bottom: 5px;
+	}
+
+	#todo-container {
+		width: 100%;
+		padding: 10px;
+		background: white;
+		border: 1px solid @light-blue;
+
+		form {
+			margin: 10px 0;
+
+			input[type="text"] {
+				font-size: 30px;
+				width: 80%;
+				height: 40px;
+				margin-left: 10px;
+			}
+
+			input[type="submit"] {
+				font-size: 30px;
+				height: 48px;
+				width: 68px;
+				vertical-align: top;
+				padding-bottom: 8px;
+			}
+		}
+
+		ul {
+			list-style-type: none;
+			padding-left: 0;
+			margin-top: 20px;
+
+			li {
+				margin-top: 8px;
+				border-bottom: 1px solid @light-blue;
+
+				label {
+					margin-left: 10px;
+					vertical-align: top;
+
+					&.todo-label-true {
+						text-decoration: line-through;
+					}
+				}
+			}
+		}
+	}
+
+	#actions {
+		float: right;
+	}
+}

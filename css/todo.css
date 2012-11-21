@@ -1,0 +1,64 @@
+body {
+  margin:0;
+  padding:0;
+  color:#555555;
+  font:normal 10pt Arial, Helvetica, sans-serif;
+  background:#efefef;
+}
+a {
+  color:#66b814;
+  text-decoration:none;
+}
+a:visited {
+  color:#66b814;
+  text-decoration:none;
+}
+input[type="text"] {
+  border:1px solid #c9e0ed;
+  background-color:#feffed;
+  padding:3px;
+}
+input[type="submit"] { border:1px solid #c9e0ed; }
+#page {
+  margin:35px auto;
+  width:500px;
+}
+#page h1 {
+  font-size:40px;
+  margin-bottom:5px;
+}
+#page #todo-container {
+  width:100%;
+  padding:10px;
+  background:white;
+  border:1px solid #c9e0ed;
+}
+#page #todo-container form { margin:10px 0; }
+#page #todo-container form input[type="text"] {
+  font-size:30px;
+  width:80%;
+  height:40px;
+  margin-left:10px;
+}
+#page #todo-container form input[type="submit"] {
+  font-size:30px;
+  height:48px;
+  width:68px;
+  vertical-align:top;
+  padding-bottom:8px;
+}
+#page #todo-container ul {
+  list-style-type:none;
+  padding-left:0;
+  margin-top:20px;
+}
+#page #todo-container ul li {
+  margin-top:8px;
+  border-bottom:1px solid #c9e0ed;
+}
+#page #todo-container ul li label {
+  margin-left:10px;
+  vertical-align:top;
+}
+#page #todo-container ul li label.todo-label-true { text-decoration:line-through; }
+#page #actions { float:right; }
