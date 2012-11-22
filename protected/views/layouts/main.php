@@ -1,9 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
 	<meta charset="utf-8" />
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
 
+	<script>
+		var generic = {
+			baseUrl: '<?php echo Yii::app()->baseUrl; ?>',
+			
+			createUrl: function(controller, action) {
+				var url = this.baseUrl+'/index.php';
+				
+				if( typeof controller!=='undefined' )
+					url += '/' + controller;
+				
+				if( typeof action!=='undefined' )
+					url += '/' + action;
+				
+				return url;
+			}
+		};
+	</script>
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 </head>
 
