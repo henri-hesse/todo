@@ -1,0 +1,44 @@
+body {
+  margin:0;
+  padding:0;
+  color:#555555;
+  font:normal 10pt Arial, Helvetica, sans-serif;
+  background:#efefef;
+}
+a {
+  color:#66b814;
+  text-decoration:none;
+}
+a:visited {
+  color:#66b814;
+  text-decoration:none;
+}
+h1 {
+  font-size:40px;
+  margin-bottom:5px;
+}
+h4 { margin-bottom:5px; }
+input[type="text"], input[type="password"] {
+  border:1px solid #c9e0ed;
+  padding:3px;
+}
+input[type="submit"] {
+  border:1px solid #c9e0ed;
+  height:24px;
+}
+.errorMessage { color:#ff3366; }
+#page {
+  margin:0 auto 35px auto;
+  width:500px;
+}
+#page #userinfo {
+  float:right;
+  margin:0;
+}
+#page #login-form input[type="text"], #page #login-form input[type="password"] { width:150px; }
+#page #register-form label {
+  display:block;
+  margin:10px 0 3px;
+}
+#page #register-form input[type="text"], #page #register-form input[type="password"] { width:341px; }
+#page #register-form input[type="submit"] { margin-top:10px; }

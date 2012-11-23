@@ -13,19 +13,27 @@ a:visited {
   color:#66b814;
   text-decoration:none;
 }
-input[type="text"] {
-  border:1px solid #c9e0ed;
-  background-color:#feffed;
-  padding:3px;
-}
-input[type="submit"] { border:1px solid #c9e0ed; }
-#page {
-  margin:35px auto;
-  width:500px;
-}
-#page h1 {
+h1 {
   font-size:40px;
   margin-bottom:5px;
+}
+h4 { margin-bottom:5px; }
+input[type="text"], input[type="password"] {
+  border:1px solid #c9e0ed;
+  padding:3px;
+}
+input[type="submit"] {
+  border:1px solid #c9e0ed;
+  height:24px;
+}
+.errorMessage { color:#ff3366; }
+#page {
+  margin:0 auto 35px auto;
+  width:500px;
+}
+#page #userinfo {
+  float:right;
+  margin:0;
 }
 #page #todo-container {
   width:100%;
@@ -39,6 +47,7 @@ input[type="submit"] { border:1px solid #c9e0ed; }
   width:80%;
   height:40px;
   margin-left:10px;
+  background-color:#feffed;
 }
 #page #todo-container form input[type="submit"] {
   font-size:30px;

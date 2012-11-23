@@ -13,9 +13,8 @@ a:visited {
   color:#66b814;
   text-decoration:none;
 }
-input[type="text"] {
+input[type="text"], input[type="password"] {
   border:1px solid #c9e0ed;
-  background-color:#feffed;
   padding:3px;
 }
 input[type="submit"] { border:1px solid #c9e0ed; }

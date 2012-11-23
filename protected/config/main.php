@@ -1,8 +1,4 @@
 <?php
-
-// uncomment the following to define a path alias
-// Yii::setPathOfAlias('local','path/to/local-folder');
-
 // This is the main Web application configuration. Any writable
 // CWebApplication properties can be configured here.
 return array(
@@ -10,7 +6,7 @@ return array(
 	'name'=>'Todos',
 
 	// Default controller
-	'defaultController'=>'todo',
+	'defaultController'=>'site',
 
 	// preloading 'log' component
 	'preload'=>array('log', 'less'),
@@ -23,6 +19,11 @@ return array(
 
 	// application components
 	'components'=>array(
+		'user'=>array(
+			// enable cookie-based authentication
+			'allowAutoLogin'=>true,
+		),
+		// Default database connection details.
 		'db'=>array(
 			'connectionString' => 'mysql:host=localhost;dbname=todo',
 			'emulatePrepare' => true,
@@ -30,13 +31,15 @@ return array(
 			'password' => '',
 			'charset' => 'utf8',
 		),
+		// Redirects errors.
 		'errorHandler'=>array(
-			'errorAction'=>'todo/error',
+			'errorAction'=>'site/error',
 		),
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(),
 		),
+		// Logs errors to a log file.
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -44,12 +47,6 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
-				// uncomment the following to show log messages on web pages
-				/*
-				array(
-					'class'=>'CWebLogRoute',
-				),
-				*/
 			),
 		),
 		// Compile LESS files on debug mode
@@ -57,13 +54,9 @@ return array(
 			'class'=>'ext.less.components.LessCompiler',
 			'forceCompile'=>YII_DEBUG, // indicates whether to force compiling
 			'paths'=>array(
-				'css/main.less'=>'css/main.css',
+				'css/site.less'=>'css/site.css',
 				'css/todo.less'=>'css/todo.css',
 			),
 		),
 	),
-
-	// application-level parameters that can be accessed
-	// using Yii::app()->params['paramName']
-	'params'=>require(dirname(__FILE__).'/params.php'),
 );

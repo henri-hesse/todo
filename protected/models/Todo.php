@@ -4,6 +4,7 @@ class Todo extends CActiveRecord {
 	/**
 	 * The followings are the available columns in table 'Todo':
 	 * @var integer $id
+	 * @var integer $userId
 	 * @var string $text
 	 * @var boolean $done
 	 */
@@ -42,26 +43,73 @@ class Todo extends CActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'id' => 'Id',
+			'userId' => 'User id',
 			'text' => 'Todo content',
 			'done' => 'Done',
 		);
 	}
 	
+	/**
+	 * Restrict all find queries to deal with only the logged in user.
+	 * 
+	 * @return Array
+	 */
+	public function defaultScope()
+	{
+		return array(
+			'condition'=>"userId='".Yii::app()->user->id."'",
+		);
+	}
+	
+	/**
+	 * See parent::afterFind()
+	 * 
+	 * @return Boolean
+	 */
 	public function afterFind() {
+		// Cast done to boolean so AngularJS likes it better.
 		$this->done = (bool)$this->done;
+		// Encode todo text content to HTML entities for security reasons.
+		$this->text = CHtml::encode($this->text);
 		
 		return parent::afterFind();
 	}
 	
+	/**
+	 * See parent::afterSave()
+	 * 
+	 * @return Boolean
+	 */
 	public function afterSave() {
+		// Cast done to boolean so AngularJS likes it better.
 		$this->done = (bool)$this->done;
+		// Encode todo text content to HTML entities for security reasons.
+		$this->text = CHtml::encode($this->text);
 		
 		return parent::afterSave();
 	}
 	
+	/**
+	 * See parent::beforeValidate()
+	 * 
+	 * @return Boolean
+	 */
 	public function beforeValidate() {
+		// Cast done back to integer
 		$this->done = (int)$this->done;
 		
 		return parent::beforeValidate();
+	}
+	
+	/**
+	 * See parent::beforeSave()
+	 * 
+	 * @return Boolean
+	 */
+	public function beforeSave() {
+		// Decode HTML entites back to normal string
+		$this->text = CHtml::decode($this->text);
+		
+		return parent::beforeSave();
 	}
 }
