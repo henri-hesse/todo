@@ -2,6 +2,7 @@ Todos is a small application for keeping track of tasks that need to be done.
 It runs on web server (PHP + MySQL) and is build on Yii PHP framework & AngularJS JavaScript framework.
 
 Dev install howto:
+
 1. Copy all files to a folder with web access
 2. Make sure these folders exist and that they (and the files inside) are writable by the web server process.
 	- protected/runtime/
